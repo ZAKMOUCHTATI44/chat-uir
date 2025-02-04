@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "pm2 delete chatbotcarrefourv2; pm2 start --name chatbotcarrefourv2 \" npx ts-node --transpile-only app.ts\""
+
   },
   "keywords": [],
   "author": "",
