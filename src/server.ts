@@ -19,7 +19,7 @@ app.use(express.json());
 app.post("/chat-bot", (req: Request, res: Response) => {
   const message = req.body;
 
-  console.log(message.ButtonPayload);
+  console.log(JSON.stringify(message));
   if (message.MessageType) {
     switch (message.MessageType) {
       case "interactive":
