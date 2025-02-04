@@ -20,6 +20,7 @@ app.post("/chat-bot", (req: Request, res: Response) => {
   const message = req.body;
 
   console.log(JSON.stringify(message));
+
   if (message.MessageType) {
     switch (message.MessageType) {
       case "interactive":
@@ -42,9 +43,10 @@ app.post("/chat-bot", (req: Request, res: Response) => {
         } else if (message.ButtonPayload === "bacheliers") {
           getbacheliersLandingPage(message.From);
         }
+      case "text":
+        defaultMessage(message.From, message.ProfileName);
+        break;
     }
-  } else {
-    defaultMessage(message.From, message.ProfileName);
   }
 
   res.send("hey");
