@@ -51,5 +51,5 @@ app.post("/chat-bot", (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log("App Started");
+  console.log(`App Started ${PORT}`);
 });
